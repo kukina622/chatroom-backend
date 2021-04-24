@@ -68,5 +68,8 @@ class search(Resource):
             return {"success":False}
 
 class foo(Resource):
+    
     def get(self):
-        print(UserModel.is_invitationExist("A","B"))
+        from ..Model.db  import db
+        print(db.searchFriendInvitation("B"))
+        

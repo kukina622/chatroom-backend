@@ -28,6 +28,8 @@ def initJoin():
             allChatHistory=db.searchChatHistory(room["room_id"])
             chatHistoryDict[room["room_id"]]=[]
             for ChatHistory in allChatHistory:
+                if (len(ChatHistory)==0):
+                    continue
                 tmp={"room":ChatHistory[0],"message":ChatHistory[1],"from":ChatHistory[2],"datetime":ChatHistory[3].strftime("%Y-%m-%d %H:%M:%S")}
                 chatHistoryDict[room["room_id"]].append(tmp)
         
